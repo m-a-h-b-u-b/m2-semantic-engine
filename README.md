@@ -1,10 +1,21 @@
-
 # M2-Semantic-Engine
 
 A **modular, high-performance semantic engine** for large-scale natural-language understanding and retrieval-augmented reasoning (RAG).  
 This repository provides a complete pipeline—**ingestion → embeddings → indexing → retrieval → reasoning → API**—ready for production or research.
-
 ---
+
+## License
+
+![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue?style=flat-square)  
+![Dual License](https://img.shields.io/badge/License-Dual%20License-green?style=flat-square) 
+
+This project is **dual-licensed**:
+
+- **Open-Source / Personal Use:** Apache 2.0  
+- **Commercial / Closed-Source Use:** Proprietary license required 
+
+For commercial licensing inquiries or enterprise use, please contact: [mahbub.aaman.app@gmail.com](mailto:mahbub.aaman.app@gmail.com)
+
 
 ## High-Level Architecture
 
@@ -223,18 +234,6 @@ ruff check src tests
 pytest
 ```
 
-
-## License
-
-![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue?style=flat-square)  
-![Dual License](https://img.shields.io/badge/License-Dual%20License-green?style=flat-square) 
-
-This project is **dual-licensed**:
-
-- **Open-Source / Personal Use:** Apache 2.0  
-- **Commercial / Closed-Source Use:** Proprietary license required 
-
-For commercial licensing inquiries or enterprise use, please contact: [mahbub.aaman.app@gmail.com](mailto:mahbub.aaman.app@gmail.com)
 
 ---
 
