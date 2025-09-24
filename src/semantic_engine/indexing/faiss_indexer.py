@@ -7,6 +7,9 @@
 # URL     : https://m-a-h-b-u-b.github.io
 # GitHub  : https://github.com/m-a-h-b-u-b/m2-semantic-engine
 
+import json
+import os
+
 from typing import List, Tuple
 from ..utils.logger import get_logger
 from ..settings import settings
@@ -68,3 +71,34 @@ class FaissIndexer:
             dists = np.linalg.norm(vecs - q, axis=1)
             order = np.argsort(dists)[:top_k]
             return [(self.docs[i], float(dists[i])) for i in order]
+    def save(self, path: str):
+        """
+        Save FAISS index and docs metadata.
+        Creates two files: {path}.index and {path}.meta.json
+        """
+        if not os.path.exists(os.path.dirname(path)):
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+
+        if FAISS_AVAILABLE:
+            faiss.write_index(self.index, f"{path}.index")
+        else:
+            # fallback: save brute-force vectors
+            np.save(f"{path}.vecs.npy", getattr(self, "_vecs", np.array([])))
+
+        with open(f"{path}.meta.json", "w", encoding="utf-8") as f:
+            json.dump(self.docs, f)
+
+    # NEW ➜ load vectors and docs from disk
+    def load(self, path: str):
+        """
+        Load FAISS index and docs metadata.
+        """
+        if FAISS_AVAILABLE and os.path.exists(f"{path}.index"):
+            self.index = faiss.read_index(f"{path}.index")
+        elif os.path.exists(f"{path}.vecs.npy"):
+            self._vecs = np.load(f"{path}.vecs.npy")
+        else:
+            raise FileNotFoundError("No saved index found at given path.")
+
+        with open(f"{path}.meta.json", "r", encoding="utf-8") as f:
+            self.docs = json.load(f)
