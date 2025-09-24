@@ -1,3 +1,21 @@
 [tool.poetry]
-name = "semantic-engine"
+name = "m2-semantic-engine"
 version = "0.1.0"
+description = "High-performance semantic engine (minimal runnable)"
+authors = ["Md Mahbubur Rahman <mahbub.aaman.app@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.95.0"
+uvicorn = "^0.22.0"
+pydantic = "^1.10.11"
+sentence-transformers = "^2.2.2"
+numpy = "^1.26.0"
+prometheus-client = "^0.16.0"
+
+# Optional heavier dependencies noted in README:
+# faiss-cpu, weaviate-client, aiokafka
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.4.0"
+ruff = "^0.0.0"
