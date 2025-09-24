@@ -6,7 +6,7 @@ This repository provides a complete pipeline—**ingestion → embeddings → in
 
 ---
 
-## 🏗️ High-Level Architecture
+## High-Level Architecture
 
 The diagram below shows how components communicate from raw data to API response.
 
@@ -65,7 +65,7 @@ The diagram below shows how components communicate from raw data to API response
 
 ---
 
-## 📂 Repository Structure
+##  Repository Structure
 
 ```
 semantic-engine/
@@ -155,22 +155,22 @@ semantic-engine/
 
 ---
 
-## ⚡ Quick Start
+##  Quick Start
 
-### 1️⃣ Install
+### Install
 ```bash
 git clone https://github.com/<your-username>/M2-Semantic-Engine.git
 cd M2-Semantic-Engine
 pip install -r requirements.txt
 ```
 
-### 2️⃣ Configure
+### Configure
 Edit `configs/local.yaml` to set:
 - Model backend (e.g., sentence-transformers/all-mpnet-base-v2)
 - Vector DB (FAISS or Weaviate)
 - Kafka brokers (for streaming ingestion)
 
-### 3️⃣ Run API
+### Run API
 ```bash
 uvicorn src.semantic_engine.api.main:app --reload
 ```
@@ -178,14 +178,14 @@ API will be live at **http://localhost:8000**
 
 ---
 
-## 🧪 Testing
+## Testing
 ```bash
 pytest tests
 ```
 
 ---
 
-## 🐳 Docker
+## Docker
 Build & run the main API image:
 ```bash
 docker build -f docker/Dockerfile -t m2-semantic-engine .
@@ -199,7 +199,7 @@ docker build -f docker/worker.Dockerfile -t m2-semantic-worker .
 
 ---
 
-## 📚 Documentation
+## Documentation
 Detailed guides in `docs/`:
 - **architecture.md** – UML diagram & rationale  
 - **api_reference.md** – REST endpoints  
@@ -212,7 +212,7 @@ mkdocs serve
 
 ---
 
-## 🤝 Contributing
+## Contributing
 1. Fork & clone  
 2. Create a branch: `git checkout -b feature/your-feature`  
 3. Commit & push, then open a PR  
@@ -223,14 +223,40 @@ ruff check src tests
 pytest
 ```
 
+
+## License
+
+![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue?style=flat-square)  
+![Dual License](https://img.shields.io/badge/License-Dual%20License-green?style=flat-square) 
+
+This project is **dual-licensed**:
+
+- **Open-Source / Personal Use:** Apache 2.0  
+- **Commercial / Closed-Source Use:** Proprietary license required 
+
+For commercial licensing inquiries or enterprise use, please contact: [mahbub.aaman.app@gmail.com](mailto:mahbub.aaman.app@gmail.com)
+
 ---
 
-## 📄 License
+## Author
 
+**Md Mahbubur Rahman**
+[GitHub](https://github.com/m-a-h-b-u-b) | [Website](https://m-a-h-b-u-b.github.io)
 
 ---
 
-## 🗺 Roadmap
+## Contributing
+
+We welcome contributions!
+
+* Fork the repo and submit pull requests
+* Follow Rust coding guidelines and safety best practices
+* Report issues or suggest features via GitHub Issues
+
+---
+---
+
+## Roadmap
 - [ ] Multilingual embeddings  
 - [ ] Real-time RAG inference  
 - [ ] Kubernetes/Helm deployment  
@@ -238,5 +264,5 @@ pytest
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 Powered by **FastAPI**, **Kafka**, **FAISS**, **Weaviate**, and **Hugging Face Transformers**.
