@@ -2,6 +2,7 @@
 
 A **modular, high-performance semantic engine** for large-scale natural-language understanding and retrieval-augmented reasoning (RAG).  
 This repository provides a complete pipeline—**ingestion → embeddings → indexing → retrieval → reasoning → API**—ready for production or research.
+
 ---
 
 ## License
