@@ -24,14 +24,14 @@ The diagram below shows how components communicate from raw data to API response
 
 ```
                 ┌─────────────────────────┐
-                │        Client / UI       │
-                │  (Web App / CLI / API)   │
+                │        Client / UI      │
+                │  (Web App / CLI / API)  │
                 └───────────┬─────────────┘
                             │  REST / gRPC
                             ▼
                 ┌─────────────────────────┐
-                │         FastAPI          │
-                │       (src/api)          │
+                │         FastAPI         │
+                │       (src/api)         │
                 └───────────┬─────────────┘
         ┌───────────────────┼───────────────────┐
         │                   │                   │
@@ -40,17 +40,17 @@ The diagram below shows how components communicate from raw data to API response
  │ Retrieval  │      │ Reasoning /  │     │   Metrics   │
  │ (src/retr.)│      │ RAG Pipeline │     │  & Logging  │
  └─────┬──────┘      └───────┬──────┘     └─────┬───────┘
-       │                     │                 │
-       ▼                     ▼                 │
- ┌─────────────┐       ┌─────────────┐         │
- │ Vector DB   │<----->│  LLM Model  │         │
- │ (FAISS /    │       │ (Embeddings │         │
- │  Weaviate)  │       │  & Inference)         │
- └─────┬───────┘       └─────────────┘         │
-       │                                       │
-       ▼                                       │
- ┌─────────────┐                               │
- │ Embeddings  │<------------------------------┘
+       │                     │                  │
+       ▼                     ▼                  │
+ ┌─────────────┐       ┌─────────────┐          │
+ │ Vector DB   │<----->│  LLM Model  │          │
+ │ (FAISS /    │       │ (Embeddings │          │
+ │  Weaviate)  │       │  & Inference)          │
+ └─────┬───────┘       └─────────────┘          │
+       │                                        │
+       ▼                                        │
+ ┌─────────────┐                                │
+ │ Embeddings  │<-------------------------------┘
  │ Generator   │
  └─────┬───────┘
        │
@@ -80,7 +80,7 @@ The diagram below shows how components communicate from raw data to API response
 ##  Repository Structure
 
 ```
-semantic-engine/
+m2-semantic-engine/
 │
 ├── README.md                  # Project overview, setup, usage
 ├── LICENSE                    # Choose OS license (MIT/Apache 2.0 etc.)
